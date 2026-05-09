@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Ultimate Portfolio</title>
+<title>ULTIMATE AI CYBER WORLD</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -14,27 +15,50 @@
 }
 
 body{
-    font-family:Arial, sans-serif;
-    background:#0b1120;
+    font-family:Arial,sans-serif;
+    background:black;
     color:white;
+    overflow-x:hidden;
 }
 
-/* NAVBAR */
+/* ===== PARTICLE BACKGROUND ===== */
+
+#particles{
+    position:fixed;
+    width:100%;
+    height:100%;
+    z-index:-2;
+}
+
+/* ===== OVERLAY ===== */
+
+.overlay{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:radial-gradient(circle,
+    transparent,
+    #000814 90%);
+    z-index:-1;
+}
+
+/* ===== NAVBAR ===== */
+
 nav{
     position:fixed;
     width:100%;
-    top:0;
+    padding:20px 50px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 50px;
-    background:rgba(0,0,0,0.6);
+    background:rgba(0,0,0,0.4);
     backdrop-filter:blur(10px);
     z-index:1000;
 }
 
 nav h1{
     color:#00f5ff;
+    text-shadow:0 0 20px #00f5ff;
 }
 
 nav a{
@@ -48,7 +72,8 @@ nav a:hover{
     color:#00f5ff;
 }
 
-/* HERO */
+/* ===== HERO ===== */
+
 .hero{
     height:100vh;
     display:flex;
@@ -56,226 +81,421 @@ nav a:hover{
     align-items:center;
     flex-direction:column;
     text-align:center;
-    background:linear-gradient(135deg,#020617,#0f172a);
 }
 
 .hero h2{
-    font-size:70px;
+    font-size:80px;
     color:#00f5ff;
-    text-shadow:0 0 20px #00f5ff;
+
+    text-shadow:
+    0 0 10px #00f5ff,
+    0 0 30px #00f5ff,
+    0 0 60px #00f5ff;
 }
 
 .hero p{
-    margin-top:15px;
-    font-size:22px;
+    margin-top:20px;
+    font-size:25px;
     opacity:0.8;
 }
 
 .btn{
-    margin-top:25px;
-    padding:12px 30px;
-    background:#00f5ff;
+    margin-top:30px;
+    padding:15px 35px;
     border:none;
-    border-radius:8px;
+    border-radius:10px;
+    background:#00f5ff;
+    color:black;
     cursor:pointer;
-    font-size:16px;
-    transition:0.3s;
+    font-size:18px;
+    transition:0.4s;
 }
 
 .btn:hover{
     transform:scale(1.1);
+    box-shadow:0 0 30px #00f5ff;
 }
 
-/* SECTION */
+/* ===== CLOCK ===== */
+
+.clock{
+    margin-top:20px;
+    font-size:30px;
+    color:#00ff88;
+    text-shadow:0 0 10px #00ff88;
+}
+
+/* ===== SECTIONS ===== */
+
 section{
-    padding:100px 40px;
+    padding:120px 30px;
     text-align:center;
 }
 
 .section-title{
-    font-size:40px;
-    margin-bottom:40px;
+    font-size:50px;
     color:#00f5ff;
+    margin-bottom:50px;
 }
 
-/* ABOUT */
-.about-box{
-    max-width:800px;
-    margin:auto;
-    background:rgba(255,255,255,0.05);
-    padding:30px;
-    border-radius:15px;
-}
+/* ===== CARDS ===== */
 
-/* SKILLS */
-.skills{
+.container{
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
-    gap:20px;
-}
-
-.skill{
-    background:#111827;
-    padding:20px;
-    width:180px;
-    border-radius:12px;
-    transition:0.3s;
-}
-
-.skill:hover{
-    transform:translateY(-10px);
-    background:#00f5ff22;
-}
-
-/* PROJECTS */
-.projects{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:20px;
+    gap:25px;
 }
 
 .card{
-    background:#111827;
-    width:250px;
-    padding:25px;
-    border-radius:15px;
-    transition:0.3s;
+    width:280px;
+    padding:30px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.1);
+    transition:0.4s;
 }
 
 .card:hover{
-    transform:scale(1.05);
-    background:#00f5ff22;
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 0 25px #00f5ff55;
 }
 
-/* CONTACT */
-.contact-box{
-    max-width:500px;
+/* ===== LOGIN ===== */
+
+.login-box{
+    width:320px;
     margin:auto;
+    background:rgba(255,255,255,0.05);
+    padding:30px;
+    border-radius:20px;
+    backdrop-filter:blur(20px);
 }
 
-input, textarea{
+input{
     width:100%;
     padding:15px;
     margin-top:15px;
     border:none;
-    border-radius:8px;
-    background:#1e293b;
+    border-radius:10px;
+    background:#111827;
     color:white;
 }
 
-button{
-    margin-top:20px;
-    padding:12px 25px;
-    border:none;
-    border-radius:8px;
-    background:#00f5ff;
-    cursor:pointer;
+/* ===== AI CHATBOT ===== */
+
+.chatbox{
+    width:90%;
+    max-width:600px;
+    margin:auto;
+    background:#111827;
+    padding:20px;
+    border-radius:15px;
 }
 
-/* FOOTER */
+#chat{
+    height:250px;
+    overflow-y:auto;
+    text-align:left;
+    margin-bottom:15px;
+}
+
+/* ===== FOOTER ===== */
+
 footer{
     padding:30px;
     text-align:center;
-    background:#020617;
+    background:#000814;
     opacity:0.7;
 }
+
 </style>
 </head>
 
 <body>
 
+<canvas id="particles"></canvas>
+<div class="overlay"></div>
+
 <!-- NAVBAR -->
+
 <nav>
-    <h1>MY WEBSITE</h1>
+
+    <h1>AI CYBER CORE</h1>
 
     <div>
         <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="#login">Login</a>
+        <a href="#ai">AI Chat</a>
     </div>
+
 </nav>
 
 <!-- HERO -->
-<div class="hero" id="home">
-    <h2>Hi, I'm Your Name 😎</h2>
-    <p>Web Developer | Python Learner | Future AI Creator</p>
 
-    <button class="btn">Explore My World</button>
+<div class="hero" id="home">
+
+    <h2>ULTIMATE FUTURE 😈</h2>
+
+    <p>AI • Cyber • Technology • Universe</p>
+
+    <div class="clock" id="clock"></div>
+
+    <button class="btn" onclick="playMusic()">
+        PLAY MUSIC 🎵
+    </button>
+
 </div>
 
 <!-- ABOUT -->
+
 <section id="about">
+
     <h2 class="section-title">About Me</h2>
 
-    <div class="about-box">
-        <p>
-            I am passionate about technology, websites, AI and programming.
-            I love creating cool projects and learning new things every day.
-        </p>
-    </div>
-</section>
+    <div class="container">
 
-<!-- SKILLS -->
-<section id="skills">
-    <h2 class="section-title">My Skills</h2>
+        <div class="card">
+            <h3>Developer</h3>
+            <p>
+                I build futuristic websites and AI systems.
+            </p>
+        </div>
 
-    <div class="skills">
-        <div class="skill">HTML</div>
-        <div class="skill">CSS</div>
-        <div class="skill">Python</div>
-        <div class="skill">Game Dev</div>
-        <div class="skill">AI Basics</div>
+        <div class="card">
+            <h3>Skills</h3>
+            <p>
+                HTML, CSS, JavaScript, Python, AI
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Mission</h3>
+            <p>
+                Creating next-generation digital experiences.
+            </p>
+        </div>
+
     </div>
+
 </section>
 
 <!-- PROJECTS -->
+
 <section id="projects">
+
     <h2 class="section-title">Projects</h2>
 
-    <div class="projects">
-        <div class="card">
-            <h3>GTA Mini Game</h3>
-            <p>Python + pygame based mini open world game.</p>
-        </div>
+    <div class="container">
 
         <div class="card">
             <h3>AI Assistant</h3>
-            <p>Jarvis-style assistant system project.</p>
+            <p>Jarvis inspired assistant.</p>
         </div>
 
         <div class="card">
-            <h3>Portfolio Website</h3>
-            <p>Modern responsive personal website.</p>
+            <h3>Cyber Dashboard</h3>
+            <p>Futuristic control system.</p>
         </div>
+
+        <div class="card">
+            <h3>Universe Engine</h3>
+            <p>Animated galaxy background system.</p>
+        </div>
+
     </div>
+
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-    <h2 class="section-title">Contact Me</h2>
+<!-- LOGIN -->
 
-    <div class="contact-box">
-        <input type="text" placeholder="Your Name">
-        <input type="email" placeholder="Your Email">
-        <textarea rows="5" placeholder="Your Message"></textarea>
+<section id="login">
 
-        <button onclick="sendMessage()">Send Message</button>
+    <h2 class="section-title">Login System 🔐</h2>
+
+    <div class="login-box">
+
+        <input type="text" placeholder="Username">
+
+        <input type="password" placeholder="Password">
+
+        <button class="btn" onclick="login()">
+            LOGIN
+        </button>
+
     </div>
+
+</section>
+
+<!-- AI CHATBOT -->
+
+<section id="ai">
+
+    <h2 class="section-title">AI Chatbot 🤖</h2>
+
+    <div class="chatbox">
+
+        <div id="chat">
+            <p><b>AI:</b> Hello Developer 😈</p>
+        </div>
+
+        <input type="text" id="userInput"
+        placeholder="Ask something...">
+
+        <button class="btn" onclick="sendMessage()">
+            SEND
+        </button>
+
+    </div>
+
+</section>
+
+<!-- WEATHER -->
+
+<section>
+
+    <h2 class="section-title">Live Weather 🌦️</h2>
+
+    <div class="card">
+        <h3>Weather Widget Area</h3>
+        <p>
+            You can later connect real weather API here.
+        </p>
+    </div>
+
 </section>
 
 <!-- FOOTER -->
+
 <footer>
-    © 2026 My Website | Made with passion 🚀
+    © 2026 AI CYBER CORE | FUTURE IS NOW ⚡
 </footer>
 
 <script>
-function sendMessage(){
-    alert("Message Sent Successfully 🚀");
+
+/* ===== LIVE CLOCK ===== */
+
+function updateClock(){
+
+    const now = new Date();
+
+    document.getElementById("clock").innerHTML =
+    now.toLocaleTimeString();
+
 }
+
+setInterval(updateClock,1000);
+
+/* ===== LOGIN ===== */
+
+function login(){
+
+    alert("Login system demo activated 🔐");
+
+}
+
+/* ===== AI CHATBOT ===== */
+
+function sendMessage(){
+
+    let input =
+    document.getElementById("userInput").value;
+
+    let chat =
+    document.getElementById("chat");
+
+    chat.innerHTML +=
+    "<p><b>You:</b> " + input + "</p>";
+
+    let reply = "I am your AI assistant 😈";
+
+    if(input.toLowerCase().includes("hello")){
+        reply = "Hello Developer 🚀";
+    }
+
+    if(input.toLowerCase().includes("who are you")){
+        reply = "I am the AI Cyber Core 🤖";
+    }
+
+    chat.innerHTML +=
+    "<p><b>AI:</b> " + reply + "</p>";
+
+}
+
+/* ===== MUSIC ===== */
+
+function playMusic(){
+
+    alert("Add your mp3 music link here 🎵");
+
+}
+
+/* ===== PARTICLE UNIVERSE ===== */
+
+const canvas =
+document.getElementById("particles");
+
+const ctx =
+canvas.getContext("2d");
+
+canvas.width =
+window.innerWidth;
+
+canvas.height =
+window.innerHeight;
+
+let particles = [];
+
+for(let i=0;i<150;i++){
+
+    particles.push({
+
+        x:Math.random()*canvas.width,
+        y:Math.random()*canvas.height,
+        r:Math.random()*3
+
+    });
+
+}
+
+function animate(){
+
+    ctx.fillStyle="black";
+
+    ctx.fillRect(
+    0,0,
+    canvas.width,
+    canvas.height);
+
+    ctx.fillStyle="#00f5ff";
+
+    particles.forEach(p=>{
+
+        ctx.beginPath();
+
+        ctx.arc(
+        p.x,p.y,p.r,
+        0,Math.PI*2);
+
+        ctx.fill();
+
+        p.y += 0.5;
+
+        if(p.y > canvas.height){
+            p.y = 0;
+        }
+
+    });
+
+    requestAnimationFrame(animate);
+
+}
+
+animate();
+
 </script>
 
 </body>
