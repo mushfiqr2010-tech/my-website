@@ -3,136 +3,280 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Pro Website</title>
+<title>My Ultimate Portfolio</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial;
-    background: linear-gradient(135deg, #0f172a, #020617);
-    color: white;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
-/* NAV */
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 50px;
-    background: rgba(0,0,0,0.4);
-    position: sticky;
-    top: 0;
+body{
+    font-family:Arial, sans-serif;
+    background:#0b1120;
+    color:white;
 }
 
-nav a {
-    color: #00f5ff;
-    text-decoration: none;
-    margin: 0 15px;
+/* NAVBAR */
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 50px;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+nav h1{
+    color:#00f5ff;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#00f5ff;
 }
 
 /* HERO */
-.hero {
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    background:linear-gradient(135deg,#020617,#0f172a);
 }
 
-.hero h1 {
-    font-size: 60px;
-    color: #00f5ff;
-    text-shadow: 0 0 20px #00f5ff;
+.hero h2{
+    font-size:70px;
+    color:#00f5ff;
+    text-shadow:0 0 20px #00f5ff;
 }
 
-.hero p {
-    font-size: 20px;
-    opacity: 0.8;
+.hero p{
+    margin-top:15px;
+    font-size:22px;
+    opacity:0.8;
 }
 
-.btn {
-    margin-top: 20px;
-    padding: 12px 25px;
-    background: #00f5ff;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
+.btn{
+    margin-top:25px;
+    padding:12px 30px;
+    background:#00f5ff;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.3s;
 }
 
-.btn:hover {
-    background: white;
+.btn:hover{
+    transform:scale(1.1);
 }
 
-/* SECTIONS */
-section {
-    padding: 80px 20px;
-    text-align: center;
+/* SECTION */
+section{
+    padding:100px 40px;
+    text-align:center;
 }
 
-.card {
-    display: inline-block;
-    background: rgba(255,255,255,0.05);
-    padding: 20px;
-    margin: 10px;
-    width: 220px;
-    border-radius: 10px;
-    transition: 0.3s;
+.section-title{
+    font-size:40px;
+    margin-bottom:40px;
+    color:#00f5ff;
 }
 
-.card:hover {
-    transform: scale(1.1);
-    background: rgba(0,245,255,0.1);
+/* ABOUT */
+.about-box{
+    max-width:800px;
+    margin:auto;
+    background:rgba(255,255,255,0.05);
+    padding:30px;
+    border-radius:15px;
+}
+
+/* SKILLS */
+.skills{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.skill{
+    background:#111827;
+    padding:20px;
+    width:180px;
+    border-radius:12px;
+    transition:0.3s;
+}
+
+.skill:hover{
+    transform:translateY(-10px);
+    background:#00f5ff22;
+}
+
+/* PROJECTS */
+.projects{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.card{
+    background:#111827;
+    width:250px;
+    padding:25px;
+    border-radius:15px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+    background:#00f5ff22;
+}
+
+/* CONTACT */
+.contact-box{
+    max-width:500px;
+    margin:auto;
+}
+
+input, textarea{
+    width:100%;
+    padding:15px;
+    margin-top:15px;
+    border:none;
+    border-radius:8px;
+    background:#1e293b;
+    color:white;
+}
+
+button{
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    background:#00f5ff;
+    cursor:pointer;
 }
 
 /* FOOTER */
-footer {
-    text-align: center;
-    padding: 30px;
-    background: rgba(0,0,0,0.4);
-    margin-top: 50px;
+footer{
+    padding:30px;
+    text-align:center;
+    background:#020617;
+    opacity:0.7;
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <nav>
-    <div><b>MY PORTFOLIO</b></div>
+    <h1>MY WEBSITE</h1>
+
     <div>
         <a href="#home">Home</a>
-        <a href="#projects">Projects</a>
         <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
     </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero" id="home">
-    <h1>Hi, I'm Developer 😎</h1>
-    <p>I build websites, apps & games</p>
-    <button class="btn">Hire Me</button>
+    <h2>Hi, I'm Your Name 😎</h2>
+    <p>Web Developer | Python Learner | Future AI Creator</p>
+
+    <button class="btn">Explore My World</button>
 </div>
 
-<section id="projects">
-    <h2>My Projects</h2>
-
-    <div class="card">GTA Game (Python)</div>
-    <div class="card">AI Assistant</div>
-    <div class="card">Chat App</div>
-</section>
-
+<!-- ABOUT -->
 <section id="about">
-    <h2>About Me</h2>
-    <p>I am learning Web Development, AI & Game Dev.</p>
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-box">
+        <p>
+            I am passionate about technology, websites, AI and programming.
+            I love creating cool projects and learning new things every day.
+        </p>
+    </div>
 </section>
 
+<!-- SKILLS -->
+<section id="skills">
+    <h2 class="section-title">My Skills</h2>
+
+    <div class="skills">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">Python</div>
+        <div class="skill">Game Dev</div>
+        <div class="skill">AI Basics</div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects">
+        <div class="card">
+            <h3>GTA Mini Game</h3>
+            <p>Python + pygame based mini open world game.</p>
+        </div>
+
+        <div class="card">
+            <h3>AI Assistant</h3>
+            <p>Jarvis-style assistant system project.</p>
+        </div>
+
+        <div class="card">
+            <h3>Portfolio Website</h3>
+            <p>Modern responsive personal website.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
 <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: yourmail@gmail.com</p>
+    <h2 class="section-title">Contact Me</h2>
+
+    <div class="contact-box">
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea rows="5" placeholder="Your Message"></textarea>
+
+        <button onclick="sendMessage()">Send Message</button>
+    </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-    © 2026 My Portfolio | Built with passion 🚀
+    © 2026 My Website | Made with passion 🚀
 </footer>
+
+<script>
+function sendMessage(){
+    alert("Message Sent Successfully 🚀");
+}
+</script>
 
 </body>
 </html>
